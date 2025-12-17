@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    Pipeline_dev_admin_citibike_etl_pipeline:
+      id: e44195a8-db9a-4850-9043-17a89d0f2668
+      name: citibike_etl_pipeline_dlt
+      configuration:
+        catalog: "${var.catalog}"
+      libraries:
+        - glob:
+            include: ../citibike_etl/dlt/**
+      continuous: false
+      development: "${var.dev_flag}"
+      photon: true
+      channel: CURRENT
+      catalog: "${var.catalog}"
+      schema: default
+      serverless: true
+      root_path: ../citibike_etl/dlt
