@@ -42,8 +42,10 @@ targets:
       # We explicitly deploy to /Workspace/Users/videodataengineeringazurre@outlook.com to make sure we only have a single copy.
       root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     permissions:
-      - user_name: videodataengineeringazurre@outlook.com
+      - service_principal_name: f5f92048-035a-4366-ae82-171f7a30a4e3
         level: CAN_MANAGE
+      - group_name: users
+        level: CAN_MANAGE  
 
   prod:
     mode: production
@@ -57,5 +59,7 @@ targets:
       # We explicitly deploy to /Workspace/Users/videodataengineeringazurre@outlook.com to make sure we only have a single copy.
       root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     permissions:
-      - user_name: videodataengineeringazurre@outlook.com
+      - service_principal_name: 80bebb29-32dc-4b91-a5e0-a59938cf8d64
+        level: CAN_MANAGE
+      - group_name: users
         level: CAN_MANAGE
